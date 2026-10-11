@@ -1,28 +1,28 @@
 import turtle as t  
 import math as m
- 
- 
+
+
 def trace_turtle(x1, y1, colors):
     t.pencolor(colors)  
-    t.goto(x1, y1)  (x1,y1)
- 
- 
+    t.goto(x1, y1)
+
+
 def draw_x(a, i1):  # x = a * cos(t1)
     t1 = m.radians(i1)  
     return a * m.cos(t1)
- 
- 
+
+
 def draw_y(b, i1):  # y = b * sin(t1)
     t1 = m.radians(i1)
     return b * m.sin(t1)
- 
- 
+
+
 def draw_graphics1(i1, a, b, x2, y2, nums1, nums2):
     x1 = draw_x(a, i1 * nums1) + x2
     y1 = draw_y(b, i1 * nums2) + y2
     t.goto(x1, y1)
- 
- 
+
+
 def draw_graphics(i1, i2, a, b, x2, y2, nums1, nums2, add, color1):
     t.pencolor(color1)
     if add:
@@ -33,23 +33,22 @@ def draw_graphics(i1, i2, a, b, x2, y2, nums1, nums2, add, color1):
         while i1 >= i2:
             draw_graphics1(i1, a, b, x2, y2, nums1, nums2)
             i1 -= 5
- 
- 
+
+
 def move_turtle(x1, y1):
     t.penup()  
     t.goto(x1, y1)
     t.pendown()  
- 
- 
+
 
 def fill_color(colors):
     t.fillcolor(colors)  
     t.end_fill()
- 
- 
+
+
 t.bgcolor((211 / 255, 218 / 255, 232 / 255))  
 t.setup(1000, 800)  
- 
+
 move_turtle(150, -70) 
 draw_colors = (254 / 255, 245 / 255, 247 / 255)
 t.begin_fill()
@@ -60,8 +59,8 @@ t.begin_fill()
 draw_graphics(0, 180, 150, 60, 0, -70, -1, -1, True, 'white')
 draw_graphics(180, 360, 150, 70, 0, -70, 1, 1, True, 'white')
 fill_color(draw_colors)
- 
- 
+
+
 def cake(x1, y1, x2, y2, a1, b1, b2, y3, top_b, top_y, cake_colors, curve_colors, top_colors, bottom):
     move_turtle(x1, y1)
     t.begin_fill()
@@ -87,8 +86,8 @@ def cake(x1, y1, x2, y2, a1, b1, b2, y3, top_b, top_y, cake_colors, curve_colors
     t.begin_fill()
     draw_graphics(0, 360, a1 - 10, top_b, 0, top_y, 1, 1, True, top_colors)
     fill_color(top_colors)
- 
- 
+
+
 cake_color = (203 / 255, 217 / 255, 249 / 255)
 bottom_color = (255 / 255, 167 / 255, 157 / 255)
 curve_color = (255 / 255, 240 / 255, 243 / 255)
@@ -98,8 +97,8 @@ cake_color = (111 / 255, 55 / 255, 50 / 255)
 curve_color = (255 / 255, 170 / 255, 160 / 255)
 top_color = (255 / 255, 195 / 255, 190 / 255)
 cake(80, 4, -80, 54, 80, 32, -12, 14, 28, 55, cake_color, curve_color, top_color, (False,))
- 
- 
+
+
 def candle(x1, y1, x2, y2):
     move_turtle(x1, y1)
     draw_color = (177 / 255, 201 / 255, 233 / 255)
@@ -121,20 +120,20 @@ def candle(x1, y1, x2, y2):
     draw_color = (241 / 255, 173 / 255, 209 / 255)
     t.begin_fill()
     draw_graphics(0, 360, 4, 10, x1 - 4, y2 + 20, 1, 1, True, draw_color)
-    fill_color(draw_colors)
- 
- 
+    fill_color(draw_color)
+
+
 candle(-56, 54, -64, 104)
 candle(-26, 44, -34, 94)
 candle(4, 64, -4, 114)
 candle(34, 44, 26, 94)
 candle(64, 54, 56, 104)
- 
+
 t.seth(90) 
 t.pu()
 t.goto(-250, 210)
 t.pd()
 t.pencolor((241 / 255, 173 / 255, 209 / 255))
 t.write("Happy Birthday", font=("Curlz MT", 70, 'bold')) 
- 
+
 t.done()  
